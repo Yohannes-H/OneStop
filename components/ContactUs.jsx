@@ -1,6 +1,10 @@
 import React from "react";
-
+import toast from "react-hot-toast";
 function ContactUs() {
+  const submitForm = (e) => {
+    e.preventDefault();
+    toast.success("Your message is sent. We will contact you soon");
+  };
   return (
     <section id="contact" className="contact">
       <div className="container" data-aos="fade-up">
@@ -40,12 +44,7 @@ function ContactUs() {
             data-aos="fade-left"
             data-aos-delay="100"
           >
-            <form
-              action="forms/contact.php"
-              method="post"
-              role="form"
-              className="php-email-form"
-            >
+            <form onSubmit={submitForm} className="php-email-form">
               <div className="row">
                 <div className="col-md-6 form-group">
                   <input

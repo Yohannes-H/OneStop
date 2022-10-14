@@ -8,8 +8,36 @@ import "../styles/vendor/glightbox/css/glightbox.min.css";
 import "../styles/vendor/remixicon/remixicon.css";
 import "../styles/vendor/swiper/swiper-bundle.min.css";
 import "../styles/style.css";
+import Script from "next/script";
+import { Toaster } from "react-hot-toast";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Script
+        src="assets/js/main.js"
+        strategy="afterInteractive"
+        onError={(e) => {
+          console.error("Script failed to load", e);
+        }}
+      />
+      <Toaster
+        toastOptions={{
+          success: {
+            style: {
+              background: "#2194F7",
+              color: "white",
+            },
+          },
+          error: {
+            style: {
+              background: "red",
+            },
+          },
+        }}
+      />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;

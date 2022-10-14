@@ -1650,7 +1650,7 @@ section {
 }
 
 .contact .php-email-form .error-message {
-  display: none;
+  display: none !important;
   color: #fff;
   background: #ed3c0d;
   text-align: left;
@@ -2424,14 +2424,14 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 1);
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #fff;
+  /* color: #fff; */
 }
 
 #footer .footer-top .footer-contact {
